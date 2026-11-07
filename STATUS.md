@@ -31,14 +31,24 @@ _Last run: 2026-11-07 (KUN-3, Day 1)._
   - All three run one at a time, with a 30-minute timeout, and wake only when assigned a task.
 
 **Blocked**
-- **Push to GitHub.** `GH_TOKEN` is empty in the Director's environment. `gh` is not logged in, and no git credentials are set up.
+- **Push to GitHub.** `GH_TOKEN` is still empty after the Board bound it (length 0, re-checked 2026-11-07 ~18:00 UTC). Waiting for the Board to fix the secret. `gh` is not logged in, and no git credentials are set up.
   - All of today's commits are on the local `main` only. They are not on GitHub yet.
   - Needs the Board: give the token to the Director's runtime.
 - **No ESP32 is connected to the Acer.** There is no `/dev/ttyUSB*` or `/dev/ttyACM*`, and `mpremote` is not installed. Session 1 can't reach HARDWARE PASS until a board and the circuit are on the bench.
-- I can't change agent permissions ("Only CEO can manage permissions"). The new hires still have `canCreateAgents: true`, and their instructions forbid using it.
+- ~~I can't change agent permissions.~~ Resolved: the Board removed `canCreateAgents` from the new hires.
+
+**Board decisions (2026-11-07, comment on KUN-3)**
+1. GitHub token: yes, bound to the Director's runtime as `GH_TOKEN`.
+   - Checked 2026-11-07: `GH_TOKEN length: 0` (still empty).
+   - Per the Board, pushing is **stopped** until the Board fixes the secret.
+   - When it's fixed, push with `git push https://x-access-token:${GH_TOKEN}@github.com/nkiliyumwami/iot-kids-course-agents.git main`. Never store the token in a file or in git config.
+2. ESP32: the Board will connect a board with the Session 1 circuit tonight. hardware-tester keeps KUN-5 open with the blocker until then.
+3. `canCreateAgents` removed from hardware-tester and curriculum-builder by the Board.
+4. hardware-tester on Sonnet: approved.
+5. Session 1 = `lessons/01-traffic-light` only. Lesson 00 and the labs are out of scope for now.
 
 **Assumptions**
-- Session N = `lessons/NN-*`. Session 1 = `lessons/01-traffic-light`. Lesson 00 (Pin Detective) and the Circuit Labs come before the course and are not part of the 10 sessions.
+- Session N = `lessons/NN-*`. Session 1 = `lessons/01-traffic-light` (confirmed by the Board). Lesson 00 (Pin Detective) and the Circuit Labs come before the course and are not part of the 10 sessions.
 - The charter overrides `AGENT.md` §"Each daily run" for this repo. In the agents fork, the Director may commit and push to `main`. Team members never commit to `main`: they work on their own branch in their own worktree (`/home/paperclip/work/wt/<agent>`), and the Director merges.
 - Evidence lives in `evidence/sessionNN/`. To keep gate e strict, runs that write evidence pass `--allow 'evidence/*'` and leave the gate's default allowlist unchanged.
 - hardware-tester runs on Sonnet: its work is routine and tokens are money. The charter doesn't name its model.
