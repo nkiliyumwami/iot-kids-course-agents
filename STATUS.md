@@ -46,6 +46,12 @@ _Last run: 2026-11-07 (KUN-3, Day 1)._
 3. `canCreateAgents` removed from hardware-tester and curriculum-builder by the Board.
 4. hardware-tester on Sonnet: approved.
 5. Session 1 = `lessons/01-traffic-light` only. Lesson 00 and the labs are out of scope for now.
+6. (18:00 UTC) The Board re-saved `GH_TOKEN`. From now on, every Director run starts with a self-check: token length, `git ls-remote` reachability and a `/dev/ttyUSB*`/`/dev/ttyACM*` board check, with the three results posted before any other work.
+
+**Self-check log**
+| When (UTC) | GH_TOKEN length | Repo reachable | Board present |
+|---|---|---|---|
+| 2026-11-07 18:00 | 0 (variable not set at all) | yes, `origin/main` = `43bf6ae` | no |
 
 **Assumptions**
 - Session N = `lessons/NN-*`. Session 1 = `lessons/01-traffic-light` (confirmed by the Board). Lesson 00 (Pin Detective) and the Circuit Labs come before the course and are not part of the 10 sessions.
