@@ -1,0 +1,12 @@
+# Gates run on main @ 17fcc37 after merging phase0/* (2026-11-07T17:49:34Z)
+# cmd: MPY_CROSS=/home/paperclip/work/.tools/py/mpy_cross/mpy-cross python3 tools/verify_lesson.py lessons/01-traffic-light
+# unit tests: python3 -m unittest discover -s tools/tests -> 32 tests OK
+== verify 01-traffic-light
+[PASS] a. extract: 26 lines from `CODE.map((l) => l[0]).join('\n').replace('GREEN_S', String(greenDur)) `
+       uses: DEFAULT_GREEN, greenDur, CODE
+[PASS] b. compile: page program compiles; main.py compiles
+[PASS] c. main.py: matches the page line by line (extra comment lines in main.py: 20)
+[PASS] d. pins: page and main.py follow the AGENT.md pin rules
+[PASS] e. files: 0 changed file(s) against main, all allowed
+== 01-traffic-light: PASS
+exit=0
