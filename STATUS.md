@@ -52,6 +52,7 @@ _Last run: 2026-11-07 (KUN-3, Day 1)._
 | When (UTC) | GH_TOKEN length | Repo reachable | Board present |
 |---|---|---|---|
 | 2026-11-07 18:00 | 0 (variable not set at all) | yes, `origin/main` = `43bf6ae` | no |
+| 2026-11-07 18:02 (after runtime reset) | 0 (variable not set; no GH_TOKEN/GITHUB_TOKEN name in env) | yes, `origin/main` = `43bf6ae` | no |
 
 **Assumptions**
 - Session N = `lessons/NN-*`. Session 1 = `lessons/01-traffic-light` (confirmed by the Board). Lesson 00 (Pin Detective) and the Circuit Labs come before the course and are not part of the 10 sessions.
