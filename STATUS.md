@@ -46,7 +46,24 @@ _Last run: 2026-11-07 (KUN-3, Day 1)._
 
 ## kids-iot-academy
 
-_No run under the new instructions yet. First task: Session 1 A4 print check + REVIEW-REGISTER.md._
+_Last run: 2026-11-07 (KUN-4). Branch `kids-iot-academy/session01-print`._
+
+**Changed**
+- Session 1 A4 print check. Headless Chrome 156, A4, 12 mm margins. Renderer: `evidence/session01/print-a4-render.py`.
+  - The worksheet was 2 pages. I shortened the answer blanks and removed no content. It is now **1 page**.
+  - The teacher guide is **4 pages**: §1–§7 on pages 1–3, and the §8 program listing alone on page 4.
+  - Evidence: `evidence/session01/print-a4-2026-11-07.md` plus the two PDFs.
+- Consistency spot-check of the page, worksheet, guide and `main.py`: holes, pins, timings and order all agree. Details are in the same evidence file.
+- Created `REVIEW-REGISTER.md`. Session 1 is GATES PASS with gates and print evidence. Sessions 2–10 are DRAFT. READY is blank (Board only).
+- Gates 5/5 PASS: `evidence/session01/gates-3-after-print-check.txt`.
+
+**Blocked**
+- Nothing on my side. Session 1 can't go past GATES PASS until hardware-tester has a board (see the Director's section).
+
+**Assumptions / decisions for the Director**
+- The worksheet's §4 answer blanks are now about 5 cm. That is tight for kids' handwriting. Should we give them more room by cutting something else?
+- The guide is 4 pages, not 3. Exactly 3 pages would mean dropping §8, the copy of `main.py`. I left that call to the Director.
+- The register columns follow KUN-4. The print evidence column notes the page counts.
 
 ## hardware-tester
 
