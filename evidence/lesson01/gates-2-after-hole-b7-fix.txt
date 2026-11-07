@@ -1,0 +1,11 @@
+# Gates run after hole b7 fix, base main @ 172ece5 + working-tree change to lessons/01-traffic-light/index.html (2026-11-07T17:49:57Z)
+== verify 01-traffic-light
+[PASS] a. extract: 26 lines from `CODE.map((l) => l[0]).join('\n').replace('GREEN_S', String(greenDur)) `
+       uses: DEFAULT_GREEN, greenDur, CODE
+[PASS] b. compile: page program compiles; main.py compiles
+[PASS] c. main.py: matches the page line by line (extra comment lines in main.py: 20)
+[PASS] d. pins: page and main.py follow the AGENT.md pin rules
+[PASS] e. files: 1 changed file(s) against main, all allowed
+       lessons/01-traffic-light/index.html
+== 01-traffic-light: PASS
+exit=0
