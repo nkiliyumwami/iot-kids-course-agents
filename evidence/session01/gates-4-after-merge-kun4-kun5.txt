@@ -1,0 +1,11 @@
+# Gates run by academy-director on main @ b3d8d33 after merging KUN-4 and KUN-5 branches (2026-11-07T18:14:01Z)
+== verify 01-traffic-light
+[PASS] a. extract: 26 lines from `CODE.map((l) => l[0]).join('\n').replace('GREEN_S', String(greenDur)) `
+       uses: DEFAULT_GREEN, greenDur, CODE
+[PASS] b. compile: page program compiles; main.py compiles
+[PASS] c. main.py: matches the page line by line (extra comment lines in main.py: 20)
+[PASS] d. pins: page and main.py follow the AGENT.md pin rules
+[PASS] e. files: 1 changed file(s) against main, all allowed
+       evidence/session01/gates-4-after-merge-kun4-kun5.txt
+== 01-traffic-light: PASS
+exit=0

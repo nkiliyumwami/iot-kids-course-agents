@@ -18,6 +18,14 @@ Status ladder: DRAFT → GATES PASS → HARDWARE PASS → SCENE PASS → AWAITIN
 
 _Last run: 2026-11-07 (KUN-3, Day 1)._
 
+**Run 2026-11-07 ~18:15 UTC (KUN-3 follow-up)**
+- Added the Board's runtime rule (Legacy runner + Claude CLI; first-run self-check) to `team/HOUSE-RULES.md` (`757e89f`).
+- Reviewed and merged `kids-iot-academy/session01-print` (KUN-4) and `hardware-tester/session01-2026-11-07` (KUN-5 blocker evidence). Gates on merged `main`: 5/5 PASS, `evidence/session01/gates-4-after-merge-kun4-kun5.txt`.
+- Director calls on KUN-4 trade-offs:
+  - Teacher guide stays 4 pages. §8 (the program listing) is useful offline, when the teacher has no screen.
+  - Worksheet stays 1 page with ~5 cm answer blanks for now. kid-tester (Day 2–3) will judge whether a 10-year-old can write in them; we change it then if needed.
+- Next: Day 2–3 hire Modeler and Inspector with the Board's runtime setup; curriculum-builder starts after HARDWARE PASS.
+
 **Changed**
 - Merged `phase0/gates`, `phase0/lesson01-main`, `phase0/lesson01-worksheet` and `phase0/lesson01-guide` into `main`, in that order and without conflicts.
   - Gates on Lesson 01: 5/5 PASS. Unit tests: 32 OK. Evidence: `evidence/session01/gates-1-after-phase0-merge.txt`.
