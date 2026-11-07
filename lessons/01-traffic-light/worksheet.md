@@ -1,9 +1,9 @@
 # Lesson 1 worksheet: My First Traffic Light
 
-Name: ____________________ Date: __________ **Grown-up who checked my circuit:** ____________________
+Name: __________________ Date: ________ **Grown-up who checked my circuit:** ______________
 
 > **Keep the USB cable unplugged while you wire.** Plug it in only after a grown-up has checked the circuit.
-> Before class, your teacher puts `main.py` (from this lesson's folder) on the ESP32. No screen or internet needed.
+> Your teacher puts `main.py` (from this lesson's folder) on the ESP32 before class. No screen or internet needed.
 
 ## 1. Predict (before you build)
 
@@ -40,13 +40,13 @@ Count the seconds out loud ("one elephant, two elephants…") for each light. Do
 
 Order I saw (write R, G or Y): ___ → ___ → ___ → ___ → ___ → ___   Was my prediction right? ☐ yes ☐ no
 
-Ask your grown-up to unplug **only** the GND wire for a moment. What happened? ______________________________
+Ask your grown-up to unplug **only** the GND wire for a moment. What happened? ________________________
 
 ## 4. Explain (use your own words)
 
-1. Why does each LED need a resistor? ______________________________________________________________
-2. Why is the short leg in a **different row** from the long leg? _____________________________________
-3. Why did the lights stop when the GND wire came out? ______________________________________________
-4. The program says `red = Pin(25, Pin.OUT)`. What does the `25` mean? ________________________________
+1. Why does each LED need a resistor? ________________________
+2. Why is the short leg in a **different row** from the long leg? ________________________
+3. Why did the lights stop when the GND wire came out? ________________________
+4. The program says `red = Pin(25, Pin.OUT)`. What does the `25` mean? ________________________
 
 **Make it yours:** In the lesson you can change the green time (2 to 10 s). If green were **8 s**, how long would one full cycle be? ______ s
