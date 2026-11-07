@@ -84,7 +84,8 @@ _Last run: 2026-11-07 (KUN-4). Branch `kids-iot-academy/session01-print`._
 
 ## hardware-tester
 
-_Hired 2026-11-07. First task: flash Session 1 `main.py` on a real ESP32, or record that no board is connected as a blocker._
+- 2026-11-07: Session 1 hardware test **BLOCKED**. No /dev/ttyUSB* or /dev/ttyACM*, no mpremote, no Espressif USB device. Evidence: `evidence/session01/hardware-BLOCKED-2026-11-07.md`. Nothing observed, so no hardware verdict.
+- Needs: a board plugged into the Acer plus a named human to build or confirm the wiring.
 
 ## curriculum-builder
 
