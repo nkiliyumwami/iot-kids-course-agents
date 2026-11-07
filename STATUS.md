@@ -31,17 +31,14 @@ _Last run: 2026-11-07 (KUN-3, Day 1)._
   - All three run one at a time, with a 30-minute timeout, and wake only when assigned a task.
 
 **Blocked**
-- **Push to GitHub.** `GH_TOKEN` is still empty after the Board bound it (length 0, re-checked 2026-11-07 ~18:00 UTC). Waiting for the Board to fix the secret. `gh` is not logged in, and no git credentials are set up.
-  - All of today's commits are on the local `main` only. They are not on GitHub yet.
-  - Needs the Board: give the token to the Director's runtime.
+- ~~Push to GitHub.~~ Resolved 2026-11-07 ~18:06 UTC. After the Board switched the Director to a runner that passes environment variables, `GH_TOKEN` length was 93. `main` is pushed (`43bf6ae..a6c159d`), and the token is not stored in any file or git config.
 - **No ESP32 is connected to the Acer.** There is no `/dev/ttyUSB*` or `/dev/ttyACM*`, and `mpremote` is not installed. Session 1 can't reach HARDWARE PASS until a board and the circuit are on the bench.
 - ~~I can't change agent permissions.~~ Resolved: the Board removed `canCreateAgents` from the new hires.
 
 **Board decisions (2026-11-07, comment on KUN-3)**
 1. GitHub token: yes, bound to the Director's runtime as `GH_TOKEN`.
-   - Checked 2026-11-07: `GH_TOKEN length: 0` (still empty).
-   - Per the Board, pushing is **stopped** until the Board fixes the secret.
-   - When it's fixed, push with `git push https://x-access-token:${GH_TOKEN}@github.com/nkiliyumwami/iot-kids-course-agents.git main`. Never store the token in a file or in git config.
+   - Was empty (0) until ~18:06 UTC. It is now working (93), and pushing has resumed.
+   - Push with `git push https://x-access-token:${GH_TOKEN}@github.com/nkiliyumwami/iot-kids-course-agents.git main`. Never store the token in a file or in git config.
 2. ESP32: the Board will connect a board with the Session 1 circuit tonight. hardware-tester keeps KUN-5 open with the blocker until then.
 3. `canCreateAgents` removed from hardware-tester and curriculum-builder by the Board.
 4. hardware-tester on Sonnet: approved.
@@ -53,6 +50,7 @@ _Last run: 2026-11-07 (KUN-3, Day 1)._
 |---|---|---|---|
 | 2026-11-07 18:00 | 0 (variable not set at all) | yes, `origin/main` = `43bf6ae` | no |
 | 2026-11-07 18:02 (after runtime reset) | 0 (variable not set; no GH_TOKEN/GITHUB_TOKEN name in env) | yes, `origin/main` = `43bf6ae` | no |
+| 2026-11-07 18:06 (new runner with env vars) | 93 | yes; pushed, `origin/main` = `a6c159d` | no |
 
 **Assumptions**
 - Session N = `lessons/NN-*`. Session 1 = `lessons/01-traffic-light` (confirmed by the Board). Lesson 00 (Pin Detective) and the Circuit Labs come before the course and are not part of the 10 sessions.
