@@ -43,6 +43,7 @@ _Last run: 2026-11-07 (KUN-3, Day 1)._
 3. `canCreateAgents` removed from hardware-tester and curriculum-builder by the Board.
 4. hardware-tester on Sonnet: approved.
 5. Session 1 = `lessons/01-traffic-light` only. Lesson 00 and the labs are out of scope for now.
+7. (18:13 UTC) Runtime rule: `GH_TOKEN` only reaches an agent on **Runner = Legacy runner + Execution engine = Claude CLI**. The Board set this for kids-iot-academy, hardware-tester and curriculum-builder. Every new hire gets the same setup and runs the three-line self-check on its first run. Recorded in `team/HOUSE-RULES.md` § "Runtime setup and first-run self-check".
 6. (18:00 UTC) The Board re-saved `GH_TOKEN`. From now on, every Director run starts with a self-check: token length, `git ls-remote` reachability and a `/dev/ttyUSB*`/`/dev/ttyACM*` board check, with the three results posted before any other work.
 
 **Self-check log**
@@ -51,6 +52,7 @@ _Last run: 2026-11-07 (KUN-3, Day 1)._
 | 2026-11-07 18:00 | 0 (variable not set at all) | yes, `origin/main` = `43bf6ae` | no |
 | 2026-11-07 18:02 (after runtime reset) | 0 (variable not set; no GH_TOKEN/GITHUB_TOKEN name in env) | yes, `origin/main` = `43bf6ae` | no |
 | 2026-11-07 18:06 (new runner with env vars) | 93 | yes; pushed, `origin/main` = `a6c159d` | no |
+| 2026-11-07 ~18:15 | 93 | yes, `origin/main` = `6e28eb9` | no |
 
 **Assumptions**
 - Session N = `lessons/NN-*`. Session 1 = `lessons/01-traffic-light` (confirmed by the Board). Lesson 00 (Pin Detective) and the Circuit Labs come before the course and are not part of the 10 sessions.

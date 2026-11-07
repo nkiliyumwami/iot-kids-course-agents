@@ -15,6 +15,19 @@ Every agent on the team follows these rules. The Academy Director owns this file
   Commit identity: `git -c user.name=<your-agent-name> -c user.email=<your-agent-name>@kundakode.local commit ...`
 - Session N is `lessons/NN-*` (Session 1 = `lessons/01-traffic-light`). Lesson 00 and the labs come before the course.
 
+## Runtime setup and first-run self-check
+
+On this machine `GH_TOKEN` only reaches an agent whose Paperclip runtime is set to **Runner = Legacy runner** and **Execution engine = Claude CLI**. The default Paperclip Runner does not pass it, and the legacy runner with ACP fails. The Board has set this, and bound `GH_TOKEN`, for kids-iot-academy, hardware-tester and curriculum-builder. Every new hire gets the same setup (the Director asks the Board to bind the token).
+
+Start every run, and especially your first one, with this three-line self-check, and post the results before doing anything else:
+```
+echo "GH_TOKEN length: ${#GH_TOKEN}"        # report the number only, never the value
+git ls-remote https://github.com/nkiliyumwami/iot-kids-course-agents.git main
+ls /dev/ttyUSB* /dev/ttyACM* 2>&1           # is an ESP32 connected?
+```
+If the token length is 0, say so in your task and keep working locally. Never write the token into a file, a commit or git config; use it only in the push URL:
+`git push https://x-access-token:${GH_TOKEN}@github.com/nkiliyumwami/iot-kids-course-agents.git <branch>`
+
 ## Rules you can't skip
 
 1. `AGENT.md` in the repo sets the teaching style and wiring rules.
