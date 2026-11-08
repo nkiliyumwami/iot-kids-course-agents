@@ -107,4 +107,17 @@ _Last run: 2026-11-07 (KUN-4). Branch `kids-iot-academy/session01-print`._
 
 ## curriculum-builder
 
-_Hired 2026-11-07. No task yet. Planned first task once Session 1 reaches HARDWARE PASS: a consistency review of the Session 1 page, worksheet, guide and code._
+_Last run: 2026-11-08 (KUNAA-7). Branch `curriculum-builder/session01-review`._
+
+**Changed**
+- Session 1 consistency review of the page, worksheet, teacher guide and `main.py` (no hardware, findings only, no lesson file edited): `evidence/session01/consistency-review-2026-11-08.md`.
+  - Pins, holes, colours, timings (5/5/2 s, 12 s cycle) and the light order agree across all four files, and the pin rules are followed.
+  - 15 findings: 3 must-fix (a `main.py` comment that only makes sense on the page; a screen-only "Make it yours" on the worksheet; an ambiguous "unplug the GND wire"), 7 should-fix and 5 nice. Each has file:line and the exact proposed text.
+- Gates 5/5 PASS on this branch: `evidence/session01/gates-5-consistency-review-2026-11-08.txt`.
+
+**Blocked**
+- Nothing. No hardware or render checks were done (the VM has no ESP32), and none are claimed.
+
+**Assumptions / open questions for the Director**
+- F10: do classroom kids do Pin Detective and the Circuit Labs before Session 1? The guide and the page assume they do.
+- F5/F6 add about 3 lines to the one-page worksheet. If they don't fit, which content gives way?
