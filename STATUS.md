@@ -7,8 +7,9 @@ The Academy Director reads this file before every decision. Team rules: `team/HO
 
 | Session | Folder | Status | Evidence |
 |---|---|---|---|
-| 1 | `lessons/01-traffic-light` | GATES PASS | `evidence/session01/gates-2-after-hole-b7-fix.txt` |
-| 2–10 | `lessons/02-…` to `lessons/10-…` | DRAFT (pages exist, no `main.py`, worksheet or guide yet) | gates read-only run in PHASE0-REPORT (c fails: no main.py) |
+| 1 | `lessons/01-traffic-light` | GATES PASS (review applied; hardware BLOCKED on lab link) | `evidence/session01/gates-6-after-review-merge.txt` |
+| 2 | `lessons/02-patterns` | DRAFT, in progress (KUNAA-9, kids-iot-academy) | — |
+| 3–10 | `lessons/03-…` to `lessons/10-…` | DRAFT (pages exist, no `main.py`, worksheet or guide yet) | gates read-only run in PHASE0-REPORT (c fails: no main.py) |
 
 Status ladder: DRAFT → GATES PASS → HARDWARE PASS → SCENE PASS → AWAITING BOARD → READY (Board only).
 
@@ -16,13 +17,17 @@ Status ladder: DRAFT → GATES PASS → HARDWARE PASS → SCENE PASS → AWAITIN
 
 ## academy-director
 
-_Last run: 2026-11-08 (KUNAA-6, Board answers Q3–Q5)._
+_Last run: 2026-11-08 (KUNAA-6, Board answer S2)._
+
+**Run 2026-11-08 (KUNAA-6, S2 = yes)**
+- Board answered S2 yes. Created **KUNAA-9 → kids-iot-academy**: Session 2 (`lessons/02-patterns`) `main.py`, worksheet, guide on branch `kids-iot-academy/session02-draft`; gates + print check evidence in `evidence/session02/`. DRAFT only, no hardware claims, Session 1 files untouched.
+- Next: review and merge KUNAA-9's branch, re-run gates on `main`.
 
 **Run 2026-11-08 (KUNAA-6, Board answers)**
 - Q3 yes: the Board will copy `PHASE0-REPORT.md` from the Acer into the repo. Until it lands, `STATUS.md` + `evidence/session01/` are the record.
 - Q4 hold: no Modeler/Inspector hire until Blender is reachable (Acer via SSH, or installed on the VM). Session 1 scene stays BLOCKED.
 - Q5 yes: agents call the Paperclip API at `http://127.0.0.1:3100` (checked: `/api/health` → 200). Rule added to `team/HOUSE-RULES.md`; house rules now name the office VM, not the Acer.
-- Open: S2 yes/no (start Session 2 DRAFT with kids-iot-academy while Session 1 waits on hardware).
+- S2 answered yes later the same day (see run above).
 
 **Run 2026-11-08 later (KUNAA-6, after KUNAA-7/8 done)**
 - Reviewed and merged `curriculum-builder/session01-review` (KUNAA-7, `56c14c9`) and `kids-iot-academy/session01-review-fixes` (KUNAA-8, `14aaef8`). The lesson edits are text only. Wiring, pins and timings are unchanged.
