@@ -1,6 +1,6 @@
 # Teacher guide: Lesson 1, My First Traffic Light
 
-**For:** learners aged 10–15 (or adult beginners) who have done Pin Detective and the two Circuit Labs.
+**For:** learners aged 10–15 (or adult beginners) who have done Pin Detective and the two Circuit Labs (if not, see the 5–10 min row).
 **New idea:** three LEDs taking turns, run by a `while True:` loop. **New part:** none (two more LED + resistor pairs).
 **Time:** about 35 minutes. **Works printed and offline** once `main.py` is on the board.
 
@@ -13,7 +13,7 @@
 1. The board needs MicroPython already on it (see `firmware/micropython/` in the course files).
 2. Copy `lessons/01-traffic-light/main.py` onto each board as **`main.py`**, for example with Thonny
    (open the file, *File → Save as… → MicroPython device*, name it `main.py`). Thonny works offline once installed.
-3. Unplug and plug the board back in: with nothing wired up yet, nothing visible happens. That is fine.
+3. Unplug and plug the board back in. With nothing wired up yet, only the board's own small power light comes on. That is fine.
 4. Use a **data** USB cable. Some cables only charge and cannot load programs.
 
 `main.py` uses the lesson's default green time of **5 s**. The cycle is red 5 s → green 5 s → yellow 2 s, repeating (12 s).
@@ -22,11 +22,11 @@
 
 | Minutes | What happens |
 |---|---|
-| 0–5 | Recap: "Last time you lit one LED from D25." Show a finished traffic light, or the lesson page. Hand out the worksheet; learners do **1. Predict**. |
-| 5–10 | Parts check and LED legs: long leg = anode (+), flat edge on the rim = cathode (−). Water-pipe picture: pin = pump, wire = pipe, resistor = narrow pipe, LED = one-way glowing water wheel. |
+| 0–5 | Recap: "Last time you lit one LED." (Skip this if the class has not done the Circuit Labs.) Show a finished traffic light, or the lesson page. Hand out the worksheet; learners do **1. Predict**. |
+| 5–10 | Parts check, LED legs (long leg = anode +, flat edge = cathode −) and the breadboard: the 5 holes in a row are joined underneath, and the middle gap splits each row in two. Water-pipe picture: pin = pump, wire = pipe, resistor = narrow pipe, LED = one-way glowing water wheel. |
 | 10–22 | Build red, then yellow, then green, then the ground wires (table below). Learners tick each row on the worksheet. |
 | 22–25 | Adult wiring check (section 5), then plug in USB. |
-| 25–30 | **3. Observe**: count seconds, write the order. Try the "unplug only the GND wire" demo, then plug it back. |
+| 25–30 | **3. Observe**: count seconds, write the order. Try the demo: pull out only the long black wire from the − rail to the GND pin (all lights go dark), then plug it back. |
 | 30–35 | **4. Explain** and discussion questions (section 7). Fast finishers: the "Make it yours" sum on the worksheet. |
 
 ## 3. Parts list (per board or pair of learners)
@@ -36,8 +36,8 @@
 | ESP32 DevKit V1 (30 pins) with MicroPython and `main.py` | 1 | pins pointing up, not pushed into the breadboard |
 | Breadboard with a blue − rail | 1 | half-size (400 holes) is enough |
 | LEDs: red, yellow, green (5 mm) | 1 each | new, untrimmed LEDs make the long leg easy to see |
-| 330 Ω resistors | 3 | colour bands orange, orange, brown (then gold) |
-| Female-to-male jumper wires | 4 | one each for D25, D26, D27; one black for GND |
+| 330 Ω resistors | 3 | colour bands orange, orange, brown (then gold); on 5-band resistors: orange, orange, black, black (then brown) |
+| Female-to-male jumper wires | 4 | one each for D25, D26, D27 (red, yellow, green if you have them, to match the lights); one black for GND |
 | Short black wires (male-to-male) | 3 | LED short-leg rows to the − rail |
 | USB data cable (micro-USB or USB-C, to match the board) | 1 | and a computer or USB power bank |
 
@@ -81,7 +81,7 @@ These come from how this circuit is built, not from classroom records; check the
 |---|---|---|
 | One light never comes on | LED in backwards | Turn the LED round: long leg in the resistor's row (i7/i15/i23), short leg in the next row. |
 | One light never comes on, LED the right way | Wrong holes: both LED legs in one row (short circuit), or the resistor not crossing the gap | Redo that light with check steps 3–5. |
-| **No** light ever comes on | Ground path broken: no wire from the − rail to GND, black wires on the + rail, or a split rail | Check steps 6–7. Then press the board's EN button to restart. |
+| **No** light ever comes on | Ground path broken: no wire from the − rail to GND, black wires on the + rail, or a split rail | Check steps 6–7. Once the loop is complete the lights come back on their own within one cycle (12 s); pressing EN to restart is optional. |
 | Lights come on in the wrong order, or a light is dark | A wire is on the wrong ESP32 pin (pins counted, not read) | Read the printed labels: red D25, yellow D26, green D27. |
 | Nothing at all, even the wiring is right; or it worked once and stopped | The program is not running: `main.py` not saved on the board (or saved under another name), a charge-only cable, or Thonny still connected and stopping it | Re-save as `main.py` on the device, close Thonny, unplug and replug. Try another cable. |
 
@@ -97,7 +97,7 @@ Also: a light that is on but very dim usually has the wrong resistor (for exampl
 6. Where have you seen traffic lights near your school? Do you think a computer like this runs them?
 7. If you wanted green to last 8 seconds, which number in the program would you change?
 
-## 8. The program (for reference; identical to the lesson page)
+## 8. The program (for reference; the same as the lesson page with green set to 5 s, plus one comment)
 
 ```python
 # My First Traffic Light (ESP32)
@@ -119,7 +119,7 @@ while True:
     red.value(0)
     yellow.value(0)
     green.value(1)
-    # GREEN_S on the page: 5 seconds is the page's default green time (its slider goes from 2 to 10)
+    # Green time in seconds. Change the 5 to make green longer or shorter (2 to 10).
     time.sleep(5)
 
     # Yellow light: get ready to stop

@@ -17,7 +17,7 @@ while True:
     red.value(0)
     yellow.value(0)
     green.value(1)
-    # GREEN_S on the page: 5 seconds is the page's default green time (its slider goes from 2 to 10)
+    # Green time in seconds. Change the 5 to make green longer or shorter (2 to 10).
     time.sleep(5)
 
     # Yellow light: get ready to stop

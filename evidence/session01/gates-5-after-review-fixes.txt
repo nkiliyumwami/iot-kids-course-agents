@@ -1,0 +1,12 @@
+# Gates run by kids-iot-academy (KUNAA-8) on branch kids-iot-academy/session01-review-fixes @ 1fd702f, after applying the Session 1 consistency review F1-F15 (2026-11-08T01:32:54Z, Azure VM)
+# Command: MPY_CROSS=/home/paperclip/work/.tools/py/mpy_cross/mpy-cross python3 tools/verify_lesson.py lessons/01-traffic-light --allow 'evidence/*' --allow STATUS.md --allow REVIEW-REGISTER.md
+== verify 01-traffic-light
+[PASS] a. extract: 26 lines from `CODE.map((l) => l[0]).join('\n').replace('GREEN_S', String(greenDur)) `
+       uses: DEFAULT_GREEN, greenDur, CODE
+[PASS] b. compile: page program compiles; main.py compiles
+[PASS] c. main.py: matches the page line by line (extra comment lines in main.py: 20)
+[PASS] d. pins: page and main.py follow the AGENT.md pin rules
+[PASS] e. files: 8 changed file(s) against main, all allowed
+       evidence/session01/gates-5-after-review-fixes.txt, evidence/session01/print-a4-2026-11-08-after-review-fixes-teacher-guide.pdf, evidence/session01/print-a4-2026-11-08-after-review-fixes-worksheet.pdf, evidence/session01/print-a4-render-playwright.py, lessons/01-traffic-light/index.html, lessons/01-traffic-light/main.py, lessons/01-traffic-light/teacher-guide.md, lessons/01-traffic-light/worksheet.md
+== 01-traffic-light: PASS
+# exit code: 0
