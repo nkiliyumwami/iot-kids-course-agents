@@ -1,0 +1,13 @@
+# Gates run by academy-director on main @ 811f532 after merging KUNAA-7 + KUNAA-8 branches (2026-11-08T01:35:09Z, kundakode-office-vm)
+== verify 01-traffic-light
+[PASS] a. extract: 26 lines from `CODE.map((l) => l[0]).join('\n').replace('GREEN_S', String(greenDur)) `
+       uses: DEFAULT_GREEN, greenDur, CODE
+[PASS] b. compile: page program compiles; main.py compiles
+[PASS] c. main.py: matches the page line by line (extra comment lines in main.py: 20)
+[PASS] d. pins: page and main.py follow the AGENT.md pin rules
+[PASS] e. files: 0 changed file(s) against main, all allowed
+== 01-traffic-light: PASS
+# unit tests (MPY_CROSS set)
+Ran 32 tests in 10.872s
+
+OK

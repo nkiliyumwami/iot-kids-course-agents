@@ -16,7 +16,14 @@ Status ladder: DRAFT → GATES PASS → HARDWARE PASS → SCENE PASS → AWAITIN
 
 ## academy-director
 
-_Last run: 2026-11-08 (KUNAA-6, office move to Azure VM)._
+_Last run: 2026-11-08 (KUNAA-6, merged KUNAA-7/8)._
+
+**Run 2026-11-08 later (KUNAA-6, after KUNAA-7/8 done)**
+- Reviewed and merged `curriculum-builder/session01-review` (KUNAA-7, `56c14c9`) and `kids-iot-academy/session01-review-fixes` (KUNAA-8, `14aaef8`). The lesson edits are text only. Wiring, pins and timings are unchanged.
+- Director accepts the KUNAA-8 calls: F2 second blank dropped, F12 water-pipe line removed from the worksheet (still in the guide), F5/F6 shortened. Worksheet stays 1 page, guide 4.
+- Gates on merged `main`: 5/5 PASS, unit tests 32 OK: `evidence/session01/gates-6-after-review-merge.txt`.
+- VM note: the unit tests need `MPY_CROSS` set too (without it, 28 fail). Run gates before writing the gate file into the repo, or gate e flags the new file.
+- Session 1 = GATES PASS (review applied). Next: HARDWARE PASS (blocked on the Acer lab link), then scene (blocked on Blender), then kid-tester.
 
 **Run 2026-11-08 (KUNAA-6, office move)**
 - The team now runs on `kundakode-office-vm` (Azure). Checkout is clean on `main` at `f469a49` and `GH_TOKEN` length is 93. The VM has no ESP32, mpremote, Blender or camera.
