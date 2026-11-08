@@ -16,7 +16,16 @@ Status ladder: DRAFT → GATES PASS → HARDWARE PASS → SCENE PASS → AWAITIN
 
 ## academy-director
 
-_Last run: 2026-11-07 (KUN-3, Day 1)._
+_Last run: 2026-11-08 (KUNAA-6, office move to Azure VM)._
+
+**Run 2026-11-08 (KUNAA-6, office move)**
+- The team now runs on `kundakode-office-vm` (Azure). Checkout is clean on `main` at `f469a49` and `GH_TOKEN` length is 93. The VM has no ESP32, mpremote, Blender or camera.
+- Restored the shared `mpy-cross` 1.29.0 at `/home/paperclip/work/.tools/py`. Session 1 gates are 5/5 on the VM.
+- Session 1 hardware is **BLOCKED until the Board opens the SSH link to the Acer lab**. hardware-tester (KUNAA-5) gets no board task until then.
+- Plan change: the Session 1 consistency review now runs before HARDWARE PASS. KUNAA-7 is assigned to curriculum-builder; KUNAA-8 is assigned to kids-iot-academy and is blocked by KUNAA-7.
+- The Board confirmed that all agents are active and wake when given a task, so none need to be resumed.
+- `PHASE0-REPORT.md` was never in git and exists only on the Acer.
+- Open Board questions: (3) copy `PHASE0-REPORT.md` into the repo, (4) hold or hire Modeler/Inspector until Blender is reachable, (5) use the local Paperclip URL `127.0.0.1:3100`. The configured `office.aikigali.com` returns a Cloudflare 302 from the VM.
 
 **Run 2026-11-07 ~18:15 UTC (KUN-3 follow-up)**
 - Added the Board's runtime rule (Legacy runner + Claude CLI; first-run self-check) to `team/HOUSE-RULES.md` (`757e89f`).
@@ -61,6 +70,7 @@ _Last run: 2026-11-07 (KUN-3, Day 1)._
 | 2026-11-07 18:02 (after runtime reset) | 0 (variable not set; no GH_TOKEN/GITHUB_TOKEN name in env) | yes, `origin/main` = `43bf6ae` | no |
 | 2026-11-07 18:06 (new runner with env vars) | 93 | yes; pushed, `origin/main` = `a6c159d` | no |
 | 2026-11-07 ~18:15 | 93 | yes, `origin/main` = `6e28eb9` | no |
+| 2026-11-08 01:2x (Azure VM) | 93 | yes, `origin/main` = `f469a49` | no (VM has no USB board) |
 
 **Assumptions**
 - Session N = `lessons/NN-*`. Session 1 = `lessons/01-traffic-light` (confirmed by the Board). Lesson 00 (Pin Detective) and the Circuit Labs come before the course and are not part of the 10 sessions.
