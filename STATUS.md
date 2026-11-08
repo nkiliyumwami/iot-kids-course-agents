@@ -81,24 +81,29 @@ _Last run: 2026-11-08 (KUNAA-6, office move to Azure VM)._
 
 ## kids-iot-academy
 
-_Last run: 2026-11-07 (KUN-4). Branch `kids-iot-academy/session01-print`._
+_Last run: 2026-11-08 (KUNAA-8), first run on the Azure VM. Branch `kids-iot-academy/session01-review-fixes`._
+
+**VM first-run self-check (2026-11-08, at the start of this run)**
+- `GH_TOKEN` length: 93. The token is set (value not recorded).
+- `git ls-remote …/iot-kids-course-agents.git main` → `d2d926d…  refs/heads/main`. The remote is reachable.
+- `ls /dev/ttyUSB* /dev/ttyACM*` → no such file. There is no board on this VM, as expected.
+- The Paperclip API redirects to Cloudflare at `office.aikigali.com` but answers on `http://127.0.0.1:3100`.
 
 **Changed**
-- Session 1 A4 print check. Headless Chrome 156, A4, 12 mm margins. Renderer: `evidence/session01/print-a4-render.py`.
-  - The worksheet was 2 pages. I shortened the answer blanks and removed no content. It is now **1 page**.
-  - The teacher guide is **4 pages**: §1–§7 on pages 1–3, and the §8 program listing alone on page 4.
-  - Evidence: `evidence/session01/print-a4-2026-11-07.md` plus the two PDFs.
-- Consistency spot-check of the page, worksheet, guide and `main.py`: holes, pins, timings and order all agree. Details are in the same evidence file.
-- Created `REVIEW-REGISTER.md`. Session 1 is GATES PASS with gates and print evidence. Sessions 2–10 are DRAFT. READY is blank (Board only).
-- Gates 5/5 PASS: `evidence/session01/gates-3-after-print-check.txt`.
+- Applied curriculum-builder's Session 1 review (KUNAA-7): 13 findings in full, F2/F5/F6 shortened, F12 rejected (water-pipe line removed instead of moved, to keep 1 page). The list with one line per finding is in `evidence/session01/review-fixes-2026-11-08.md`.
+  - Files: `worksheet.md`, `teacher-guide.md`, `main.py` (comment line 20 only), `index.html` (F14 wiring sentence, F15 "Step 1 of 16").
+- Print check redone on the VM with Playwright Chromium (Chrome isn't installed). Worksheet **1** page, guide **4** pages. Evidence: `evidence/session01/print-a4-2026-11-08.md` and its two PDFs. New renderer: `evidence/session01/print-a4-render-playwright.py` (same CSS as the Chrome one).
+- Gates 5/5 PASS: `evidence/session01/gates-5-after-review-fixes.txt`.
+- `REVIEW-REGISTER.md`: Session 1 is still GATES PASS, with the new gates and print evidence; hardware is BLOCKED, waiting for the lab link.
 
 **Blocked**
-- Nothing on my side. Session 1 can't go past GATES PASS until hardware-tester has a board (see the Director's section).
+- Session 1 hardware: no ESP32 on this VM. It needs the lab link (hardware-tester, via the Director).
 
 **Assumptions / decisions for the Director**
-- The worksheet's §4 answer blanks are now about 5 cm. That is tight for kids' handwriting. Should we give them more room by cutting something else?
-- The guide is 4 pages, not 3. Exactly 3 pages would mean dropping §8, the copy of `main.py`. I left that call to the Director.
-- The register columns follow KUN-4. The print evidence column notes the page counts.
+- F10, open question 1 (do classroom kids do the Labs first?) is still open. I wrote the guide so it works either way.
+- To keep the worksheet on 1 page, I removed its water-pipe line (the guide still teaches it) and dropped F2's second blank ("which line would change?"; guide §7 Q7 still asks it).
+- Print tools were installed into `/home/paperclip/work/.tools/` without root: free downloads, no accounts. If the Board would rather install system Chrome and poppler, the old renderer works again.
+- I worked from the review on curriculum-builder's branch (it isn't merged into `main` yet). My branch doesn't include their commits.
 
 ## hardware-tester
 
