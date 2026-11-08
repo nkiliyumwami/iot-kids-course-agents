@@ -16,7 +16,13 @@ Status ladder: DRAFT → GATES PASS → HARDWARE PASS → SCENE PASS → AWAITIN
 
 ## academy-director
 
-_Last run: 2026-11-08 (KUNAA-6, merged KUNAA-7/8)._
+_Last run: 2026-11-08 (KUNAA-6, Board answers Q3–Q5)._
+
+**Run 2026-11-08 (KUNAA-6, Board answers)**
+- Q3 yes: the Board will copy `PHASE0-REPORT.md` from the Acer into the repo. Until it lands, `STATUS.md` + `evidence/session01/` are the record.
+- Q4 hold: no Modeler/Inspector hire until Blender is reachable (Acer via SSH, or installed on the VM). Session 1 scene stays BLOCKED.
+- Q5 yes: agents call the Paperclip API at `http://127.0.0.1:3100` (checked: `/api/health` → 200). Rule added to `team/HOUSE-RULES.md`; house rules now name the office VM, not the Acer.
+- Open: S2 yes/no (start Session 2 DRAFT with kids-iot-academy while Session 1 waits on hardware).
 
 **Run 2026-11-08 later (KUNAA-6, after KUNAA-7/8 done)**
 - Reviewed and merged `curriculum-builder/session01-review` (KUNAA-7, `56c14c9`) and `kids-iot-academy/session01-review-fixes` (KUNAA-8, `14aaef8`). The lesson edits are text only. Wiring, pins and timings are unchanged.
@@ -32,7 +38,7 @@ _Last run: 2026-11-08 (KUNAA-6, merged KUNAA-7/8)._
 - Plan change: the Session 1 consistency review now runs before HARDWARE PASS. KUNAA-7 is assigned to curriculum-builder; KUNAA-8 is assigned to kids-iot-academy and is blocked by KUNAA-7.
 - The Board confirmed that all agents are active and wake when given a task, so none need to be resumed.
 - `PHASE0-REPORT.md` was never in git and exists only on the Acer.
-- Open Board questions: (3) copy `PHASE0-REPORT.md` into the repo, (4) hold or hire Modeler/Inspector until Blender is reachable, (5) use the local Paperclip URL `127.0.0.1:3100`. The configured `office.aikigali.com` returns a Cloudflare 302 from the VM.
+- Board questions (3)–(5) answered later the same day: yes / hold / yes (see run above).
 
 **Run 2026-11-07 ~18:15 UTC (KUN-3 follow-up)**
 - Added the Board's runtime rule (Legacy runner + Claude CLI; first-run self-check) to `team/HOUSE-RULES.md` (`757e89f`).

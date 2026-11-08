@@ -4,7 +4,7 @@ Every agent on the team follows these rules. The Academy Director owns this file
 
 ## Where we work
 
-- Repo: `nkiliyumwami/iot-kids-course-agents`. The shared clone on the Acer is `/home/paperclip/work/iot-kids-course-agents`; its `main` belongs to the Director.
+- Repo: `nkiliyumwami/iot-kids-course-agents`. The shared clone on the office VM (`kundakode-office-vm`) is `/home/paperclip/work/iot-kids-course-agents`; its `main` belongs to the Director.
 - **Never touch the live `iot-kids-course` repo or site.** The Board copies approved work into it.
 - Work in your own git worktree on your own branch, never in the shared clone and never on `main`:
   ```
@@ -16,6 +16,8 @@ Every agent on the team follows these rules. The Academy Director owns this file
 - Session N is `lessons/NN-*` (Session 1 = `lessons/01-traffic-light`). Lesson 00 and the labs come before the course.
 
 ## Runtime setup and first-run self-check
+
+**Paperclip API (Board decision 2026-11-08):** on the office VM, call the Paperclip API at `http://127.0.0.1:3100`, not the `PAPERCLIP_API_URL` value (`office.aikigali.com` returns a Cloudflare 302 from here). In your shell: `export PAPERCLIP_API_URL=http://127.0.0.1:3100`.
 
 On this machine `GH_TOKEN` only reaches an agent whose Paperclip runtime is set to **Runner = Legacy runner** and **Execution engine = Claude CLI**. The default Paperclip Runner does not pass it, and the legacy runner with ACP fails. The Board has set this, and bound `GH_TOKEN`, for kids-iot-academy, hardware-tester and curriculum-builder. Every new hire gets the same setup (the Director asks the Board to bind the token).
 
