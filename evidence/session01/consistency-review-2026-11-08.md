@@ -12,7 +12,7 @@
 | Pins red/yellow/green | D25/D26/D27 (`CH`, l.621–623; `CODE`, l.1432–1434) | `Pin(25/26/27)` l.5–7 | §2 l.25–27 | §4 l.50–52 |
 | Holes | pin→b7/b15/b23, resistor d→g, long leg i7/i15/i23, short leg i8/i16/i24, black j8/j16/j24 → − rail (Why cards l.1654–1729) | n/a | §2 table | §4 table, §5 checks |
 | GND | the GND pin next to D13, on the same side as D25–D27 (`NEAR_PINS` l.753, Why l.1729) | n/a | l.28 | l.53 |
-| Order and timing | red 5 → green 5 (slider 2–10) → yellow 2, so 12 s (`PHASES` l.1400, cycle bar l.530–534, step 1 l.1576) | l.9–27, 5/5/2 | §1 l.10 | §1 l.19 |
+| Order and timing | red 5 → green 5 (slider 2–10) → yellow 2, so 12 s (`PHASES` l.1401, cycle bar l.530–534, step 1 l.1576) | l.9–27, 5/5/2 | §1 l.10 | §1 l.19 |
 | Arithmetic | 5 + g + 2 (l.2102) | n/a | 60 ÷ 12 = 5 cycles; with 8 s green, 15 s | §7 Q7 |
 | Quiz ↔ Explain | resistor, short leg, GND (l.2106–2121) | n/a | §4 Q1–3 (+ Pin(25) Q4) | §7 Q1–3 |
 | Pin rules | no D34/D35/VP/VN outputs; no new parts on D2/D5/D12/D15/TX0/RX0; D25/26/27 wiring kept | gate d PASS | | |
