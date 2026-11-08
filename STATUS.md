@@ -94,29 +94,25 @@ _Last run: 2026-11-08 (KUNAA-6, Board answers Q3–Q5)._
 
 ## kids-iot-academy
 
-_Last run: 2026-11-08 (KUNAA-8), first run on the Azure VM. Branch `kids-iot-academy/session01-review-fixes`._
+_Last run: 2026-11-08 (KUNAA-9). Branch `kids-iot-academy/session02-draft` (from `main` @ `d69d4c7`)._
 
-**VM first-run self-check (2026-11-08, at the start of this run)**
-- `GH_TOKEN` length: 93. The token is set (value not recorded).
-- `git ls-remote …/iot-kids-course-agents.git main` → `d2d926d…  refs/heads/main`. The remote is reachable.
-- `ls /dev/ttyUSB* /dev/ttyACM*` → no such file. There is no board on this VM, as expected.
-- The Paperclip API redirects to Cloudflare at `office.aikigali.com` but answers on `http://127.0.0.1:3100`.
+**Self-check (start of run):** `GH_TOKEN` length 93; `git ls-remote … main` → `d69d4c7…`; no `/dev/ttyUSB*` or `/dev/ttyACM*` (no board on the VM, as expected).
 
 **Changed**
-- Applied curriculum-builder's Session 1 review (KUNAA-7): 13 findings in full, F2/F5/F6 shortened, F12 rejected (water-pipe line removed instead of moved, to keep 1 page). The list with one line per finding is in `evidence/session01/review-fixes-2026-11-08.md`.
-  - Files: `worksheet.md`, `teacher-guide.md`, `main.py` (comment line 20 only), `index.html` (F14 wiring sentence, F15 "Step 1 of 16").
-- Print check redone on the VM with Playwright Chromium (Chrome isn't installed). Worksheet **1** page, guide **4** pages. Evidence: `evidence/session01/print-a4-2026-11-08.md` and its two PDFs. New renderer: `evidence/session01/print-a4-render-playwright.py` (same CSS as the Chrome one).
-- Gates 5/5 PASS: `evidence/session01/gates-5-after-review-fixes.txt`.
-- `REVIEW-REGISTER.md`: Session 1 is still GATES PASS, with the new gates and print evidence; hardware is BLOCKED, waiting for the lab link.
+- Session 2 first draft (`lessons/02-patterns`): `main.py` (the page program with its default times RED_S 5, GREEN_S 5, YELLOW_S 2, plus one comment line about the Shell), `worksheet.md`, `teacher-guide.md`. Session 1 files untouched.
+- Gates 5/5 PASS: `evidence/session02/gates-1-draft.txt`.
+- Print check: worksheet **1** page, guide **4** pages. Evidence: `evidence/session02/print-a4-2026-11-08-draft.md` and its two PDFs.
+- `REVIEW-REGISTER.md`: Session 2 → GATES PASS; hardware NOT TESTED.
 
 **Blocked**
-- Session 1 hardware: no ESP32 on this VM. It needs the lab link (hardware-tester, via the Director).
+- Nothing for the draft. Session 1 and Session 2 hardware both need the lab link (hardware-tester, via the Director).
 
-**Assumptions / decisions for the Director**
-- F10, open question 1 (do classroom kids do the Labs first?) is still open. I wrote the guide so it works either way.
-- To keep the worksheet on 1 page, I removed its water-pipe line (the guide still teaches it) and dropped F2's second blank ("which line would change?"; guide §7 Q7 still asks it).
-- Print tools were installed into `/home/paperclip/work/.tools/` without root: free downloads, no accounts. If the Board would rather install system Chrome and poppler, the old renderer works again.
-- I worked from the review on curriculum-builder's branch (it isn't merged into `main` yet). My branch doesn't include their commits.
+**Assumptions / notes for the Director**
+- Page and code agree, and no pin rule is broken (same D25/D26/D27 circuit, no other pins). No blocker.
+- Observation, not a blocker: the page teaches **three** new code ideas (variables, a function, `print()`), and AGENT.md says at most one new code idea per lesson. I followed the page. Curriculum-builder may want to look at it.
+- `print()` needs the shared laptop with Thonny connected; the guide says how (§5) and that the lights work without it. The worksheet's Shell question and "Make it yours" are done at the laptop, one group at a time.
+- The guide gives the Warning flasher and Light chase as line lists (§6) so a teacher can type them offline; they are copied from the page's presets.
+- I didn't touch the "Sessions" table at the top of STATUS.md (the Director's); it still says Sessions 2–10 are DRAFT.
 
 ## hardware-tester
 

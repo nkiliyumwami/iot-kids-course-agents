@@ -1,0 +1,12 @@
+# Gates run by kids-iot-academy on kids-iot-academy/session02-draft @ 02e4688 (lesson files), 2026-11-08T01:56:25Z, kundakode-office-vm (KUNAA-9)
+# Command: MPY_CROSS=/home/paperclip/work/.tools/py/mpy_cross/mpy-cross python3 tools/verify_lesson.py lessons/02-patterns --allow 'evidence/*' --allow STATUS.md --allow REVIEW-REGISTER.md
+# Exit code: 0
+== verify 02-patterns
+[PASS] a. extract: 30 lines from `buildCode().map((l) => l[0]).join('\n') + '\n'`
+       uses: fmt, PRESETS, vars, PHASES, lightArgs, buildCode
+[PASS] b. compile: page program compiles; main.py compiles
+[PASS] c. main.py: matches the page line by line (extra comment lines in main.py: 19)
+[PASS] d. pins: page and main.py follow the AGENT.md pin rules
+[PASS] e. files: 6 changed file(s) against main, all allowed
+       evidence/session02/gates-1-draft.txt, evidence/session02/print-a4-2026-11-08-draft-teacher-guide.pdf, evidence/session02/print-a4-2026-11-08-draft-worksheet.pdf, lessons/02-patterns/main.py, lessons/02-patterns/teacher-guide.md, lessons/02-patterns/worksheet.md
+== 02-patterns: PASS
