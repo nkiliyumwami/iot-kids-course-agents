@@ -9,7 +9,7 @@ The Academy Director reads this file before every decision. Team rules: `team/HO
 |---|---|---|---|
 | 1 | `lessons/01-traffic-light` | GATES PASS (review applied; hardware BLOCKED on lab link) | `evidence/session01/gates-6-after-review-merge.txt` |
 | 2 | `lessons/02-patterns` | DRAFT, in progress (KUNAA-9, kids-iot-academy) | — |
-| 3–10 | `lessons/03-…` to `lessons/10-…` | DRAFT (pages exist, no `main.py`, worksheet or guide yet) | gates read-only run in PHASE0-REPORT (c fails: no main.py) |
+| 3–10 | `lessons/03-…` to `lessons/10-…` | DRAFT (pages exist, no `main.py`, worksheet or guide yet) | read-only gate run in `PHASE0-REPORT.md` (c fails: no main.py) |
 
 Status ladder: DRAFT → GATES PASS → HARDWARE PASS → SCENE PASS → AWAITING BOARD → READY (Board only).
 
@@ -17,7 +17,18 @@ Status ladder: DRAFT → GATES PASS → HARDWARE PASS → SCENE PASS → AWAITIN
 
 ## academy-director
 
-_Last run: 2026-11-08 (KUNAA-6, Board answer S2)._
+_Last run: 2026-11-08 (KUNAA-6, PHASE0-REPORT.md committed)._
+
+**Run 2026-11-08 (KUNAA-6, PHASE0-REPORT.md in)**
+- The Board copied `PHASE0-REPORT.md` from the Acer. It is now committed to `main` as it was written, with no edits. It is a historical record of the 2026-11-07 overnight run.
+- I compared it with this file. All five Phase 0 commits (`43bf6ae` base, `072ed56`, `1d09bda`, `a33f482`, `978769b`) are in `main`'s history. **The report and STATUS agree on the facts. Differences:**
+  1. **Repo path.** Phase 0 ran in `/home/paperclip/work/iot-kids-course` (a local copy of the *live* repo, nothing pushed), not in the agents fork. The branches were then merged here. Nothing reached the live repo.
+  2. **Hole a/b7.** The report says "noticed, not changed". It was fixed afterwards (`gates-2-after-hole-b7-fix.txt`), so the report is out of date on this point only.
+  3. **Teacher guide length.** The report says about 3 A4 pages. After KUN-4 and KUNAA-8 it prints on 4 (`print-a4-2026-11-08.md`).
+  4. **`main.py` comment line 20.** The report quotes the original page-only comment. KUNAA-8 (review F1) reworded it. Code lines are unchanged and gate c still passes.
+  5. **Tools.** On the Acer, `mpy-cross` was a `pip --user` install, prints came from headless Chrome, and `check.sh` needed a symlink `/home/paperclip/.npm-global-phase0`. On the VM: shared `mpy-cross` in `/home/paperclip/work/.tools/py`, Playwright Chromium for prints, and the symlink does not exist here.
+  6. **Not yet in STATUS (now tracked):** (a) `tools/check.sh` fails on a second run into the same `OUT` folder (`cp -r` copies read-only `.git` objects); (b) `ROADMAP.md` log was never updated for Phase 0/Session 1; (c) the gates check pins in **code only**, not the 3D wiring or the `wiring:` sentence. That gap is for the Inspector once hired; (d) the "5 likely faults" in the guide are judgement, not classroom data. kid-tester and the first class will test them.
+- No change to any session status.
 
 **Run 2026-11-08 (KUNAA-6, S2 = yes)**
 - Board answered S2 yes. Created **KUNAA-9 → kids-iot-academy**: Session 2 (`lessons/02-patterns`) `main.py`, worksheet, guide on branch `kids-iot-academy/session02-draft`; gates + print check evidence in `evidence/session02/`. DRAFT only, no hardware claims, Session 1 files untouched.
@@ -96,6 +107,14 @@ _Last run: 2026-11-08 (KUNAA-6, Board answer S2)._
 - Evidence lives in `evidence/sessionNN/`. To keep gate e strict, runs that write evidence pass `--allow 'evidence/*'` and leave the gate's default allowlist unchanged.
 - hardware-tester runs on Sonnet: its work is routine and tokens are money. The charter doesn't name its model.
 - The worksheet expects the teacher to load `main.py` before class (no screen for kids). I accepted that as the offline model.
+
+## Assumptions pending Board review
+
+Decisions the Director made under charter §10 without asking. The Board may overrule any of them.
+
+1. `PHASE0-REPORT.md` is committed unedited as a historical record. Where it is now out of date, the corrections live in this file (Director run "PHASE0-REPORT.md in"), not in the report.
+2. The `check.sh` second-run bug and the missing `ROADMAP.md` log line are backlog items. They go to kids-iot-academy after KUNAA-9, one run at a time, and Session 2 comes first.
+3. Session 2 drafting runs ahead while Session 1 waits for hardware. Sessions are still presented for READY in order (§10).
 
 ## kids-iot-academy
 
